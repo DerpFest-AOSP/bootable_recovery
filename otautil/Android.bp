@@ -45,6 +45,7 @@ cc_library_static {
                 "roots.cpp",
                 "sysutil.cpp",
                 "thermalutil.cpp",
+                "ziputil.cpp",
             ],
 
             include_dirs: [
@@ -60,6 +61,7 @@ cc_library_static {
                 "libext4_utils",
                 "libfs_mgr",
                 "libselinux",
+                "libziparchive",
             ],
 
             export_static_lib_headers: [
