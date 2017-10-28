@@ -45,6 +45,7 @@ cc_library_static {
                 "roots.cpp",
                 "sysutil.cpp",
                 "thermalutil.cpp",
+                "ziputil.cpp",
             ],
 
             include_dirs: [
