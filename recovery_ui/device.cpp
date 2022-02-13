@@ -39,7 +39,7 @@ static std::vector<menu_action_t> g_main_actions{
 
 static std::vector<std::string> g_advanced_header{ "Advanced" };
 static std::vector<menu_action_t> g_advanced_actions{
-  { "Enter fastboot", Device::ENTER_FASTBOOT },
+  { "Enter fastbootd", Device::ENTER_FASTBOOT },
   { "Reboot to bootloader", Device::REBOOT_BOOTLOADER },
   { "Reboot to recovery", Device::REBOOT_RECOVERY },
   { "Mount/unmount system", Device::MOUNT_SYSTEM },
