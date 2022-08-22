@@ -156,7 +156,7 @@ bool WipeSystem(RecoveryUI* ui, const std::function<bool()>& confirm_func) {
   }
 
   ui->Print("\n-- Wiping system...\n");
-  bool success = EraseVolume(android::fs_mgr::GetSystemRoot().c_str(), ui, false);
+  bool success = EraseVolume(android::fs_mgr::GetSystemRoot().c_str(), ui);
   ui->Print("System wipe %s.\n", success ? "complete" : "failed");
   return success;
 }
