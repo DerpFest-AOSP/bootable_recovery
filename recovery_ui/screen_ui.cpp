@@ -589,16 +589,13 @@ void ScreenRecoveryUI::SetColor(UIElement e) const {
         gr_color(0xc7, 0x15, 0x85, 255);
       break;
     case UIElement::INFO:
-      if (fastbootd_logo_enabled_)
-        gr_color(0xfd, 0xd8, 0x35, 255);
-      else
-        gr_color(0xf8, 0x90, 0xff, 255);
+      gr_color(0xfd, 0xd8, 0x35, 255);
       break;
     case UIElement::HEADER:
       if (fastbootd_logo_enabled_)
-        gr_color(0xfd, 0xd8,0x35, 255);
+        gr_color(0xfd, 0xd8, 0x35, 255);
       else
-        gr_color(0xf8, 0x90, 0xff, 255);
+        gr_color(0xfd, 0xd8, 0x35, 255);
       break;
     case UIElement::MENU:
       gr_color(0xd8, 0xd8, 0xd8, 255);
@@ -606,24 +603,21 @@ void ScreenRecoveryUI::SetColor(UIElement e) const {
     case UIElement::MENU_SEL_BG:
     case UIElement::SCROLLBAR:
       if (fastbootd_logo_enabled_)
-        gr_color(0xe6, 0x51, 0x00, 255);
+        gr_color(0x4a, 0x24, 0xab, 255);
       else
-        gr_color(0x7c, 0x4d, 0xff, 255);
+        gr_color(0x2c, 0x8f, 0x94, 255);
       break;
     case UIElement::MENU_SEL_BG_ACTIVE:
-      gr_color(0, 156, 100, 255);
+      gr_color(164, 185, 228, 255);
       break;
     case UIElement::MENU_SEL_FG:
-      if (fastbootd_logo_enabled_)
-        gr_color(0, 0, 0, 255);
-      else
-        gr_color(0xd8, 0xd8, 0xd8, 255);
+      gr_color(0, 0, 0, 255);
       break;
     case UIElement::LOG:
       gr_color(196, 196, 196, 255);
       break;
     case UIElement::TEXT_FILL:
-      gr_color(0, 0, 0, 160);
+      gr_color(255, 255, 255, 255);
       break;
     default:
       gr_color(255, 255, 255, 255);
