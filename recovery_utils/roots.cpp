@@ -34,6 +34,7 @@
 #include <android-base/properties.h>
 #include <android-base/stringprintf.h>
 #include <android-base/unique_fd.h>
+#include <blkid/blkid.h>
 #include <ext4_utils/ext4_utils.h>
 #include <blkid/blkid.h>
 #include <cryptfs.h>
