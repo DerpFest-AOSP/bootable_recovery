@@ -892,7 +892,7 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
     ver_date = ver_date_match.str(1);
   }
   else {
-	LOG(WARNING) << "Recovery creation date and/or time could not be found.";
+    LOG(WARNING) << "Recovery creation date and/or time could not be found.";
   }
 
   std::vector<std::string> title_lines = {
