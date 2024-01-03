@@ -880,13 +880,20 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
     ui->SetStage(st_cur, st_max);
   }
 
-  // Extract the YYYYMMDD / YYYYMMDD_HHMMSS timestamp from the full version string.
-  // Assume the first instance of "-[0-9]{8}-", or "-[0-9]{8}_[0-9]{6}-" in case
-  // DERP_VERSION_APPEND_TIME_OF_DAY is set to true has the desired date.
+  // Extract the YYYYMMDD / YYYYMMDD-HHMM timestamp from the full version string.
+  // Assume the first instance of "-[0-9]{8}", or "-[0-9]{8}-[0-9]{4}"
+  // In case DERP_VERSION_APPEND_TIME_OF_DAY is set to true, time is also matched.
   std::string ver = android::base::GetProperty("ro.derp.version", "");
+  std::regex pattern("-(\\d{8}(-\\d{4})?)");
   std::smatch ver_date_match;
-  std::regex_search(ver, ver_date_match, std::regex("-(\\d{8}(_\\d{6})?)-"));
-  std::string ver_date = ver_date_match.str(1);  // Empty if no match.
+  std::string ver_date = "";
+
+  if (std::regex_search(ver, ver_date_match, pattern)) {
+    ver_date = ver_date_match.str(1);
+  }
+  else {
+    LOG(WARNING) << "Recovery creation date and/or time could not be found.";
+  }
 
   std::vector<std::string> title_lines = {
     "Version " + android::base::GetProperty("ro.derp.build.version", "(unknown)") +
