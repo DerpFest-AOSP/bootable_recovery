@@ -853,7 +853,7 @@ Device::BuiltinAction start_recovery(Device* device, const std::vector<std::stri
   }
 
   std::vector<std::string> title_lines = {
-    "Version " + android::base::GetProperty("ro.derpfest.build_date", "(unknown)") +
+    "Version " + android::base::GetProperty("ro.derpfest.build.version", "(unknown)") +
         " (" + ver_date + ")",
   };
   title_lines.push_back("Product name - " + android::base::GetProperty("ro.product.device", ""));
